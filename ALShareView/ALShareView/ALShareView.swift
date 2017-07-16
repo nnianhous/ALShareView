@@ -12,7 +12,7 @@ private extension Selector {
 
 }
 
-class ALShareView: UIView,ALShareSheetViewDelegate{
+public class ALShareView: UIView,ALShareSheetViewDelegate{
 
 
     /**< 半透明黑色背景 */
@@ -50,7 +50,7 @@ class ALShareView: UIView,ALShareSheetViewDelegate{
 
 
 
-     init(frame: CGRect,shareArray:Array<ALShareItem>,functionArray:Array<ALShareItem>) {
+     public init(frame: CGRect,shareArray:Array<ALShareItem>,functionArray:Array<ALShareItem>) {
         super.init(frame: frame)
 
 
@@ -84,7 +84,7 @@ class ALShareView: UIView,ALShareSheetViewDelegate{
     /**
      *  显示\隐藏
      */
-    func show() {
+    public func show() {
         self.addToKeyWindow()
         self.showAnimationWithCompletion { (finished) in
 
@@ -92,7 +92,7 @@ class ALShareView: UIView,ALShareSheetViewDelegate{
 
     }
 
-    func hide() {
+    public func hide() {
         self.hideAnimationWithCompletion { (finished) in
             self.removeFromKeyWindow()
         }
@@ -108,7 +108,7 @@ class ALShareView: UIView,ALShareSheetViewDelegate{
     }
 
 
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
 
     }
@@ -165,7 +165,7 @@ class ALShareView: UIView,ALShareSheetViewDelegate{
 
 
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 

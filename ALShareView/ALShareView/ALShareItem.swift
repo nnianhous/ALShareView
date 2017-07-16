@@ -9,16 +9,18 @@
 import UIKit
 
 
-typealias Handler = () -> Void
+public typealias Handler = () -> Void
 
-class ALShareItem: NSObject {
+public class ALShareItem: NSObject {
 
     var icon: String? /**< 图标名称 */
     var title: String? /**< 标题 */
     var handler:Handler?
 
-    init(title:String,icon:String) {
+    public init(title:String,icon:String,handler:@escaping Handler) {
         self.title = title
         self.icon = icon
+        self.handler = handler
     }
+
 }

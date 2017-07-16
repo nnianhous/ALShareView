@@ -16,10 +16,10 @@ let kCellIdentifier_ALShareItemCell = "ALShareItemCell";
 
 
 class ALShareItemCell: UICollectionViewCell {
-    var item = ALShareItem(title: "", icon: ""){
+    var item:ALShareItem? {
         didSet {
-            self.iconView.setImage(UIImage(named:item.icon!), for:.normal)
-            self.titleView.text = item.title;
+            self.iconView.setImage(UIImage(named:(item?.icon!)!), for:.normal)
+            self.titleView.text = item?.title;
         }
 
     }
@@ -54,9 +54,9 @@ class ALShareItemCell: UICollectionViewCell {
 
     func iconClick(_ send:UIButton)  {
 
-        if (self.item.handler != nil) {
+        if (self.item?.handler != nil) {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: kShareHideNotification), object: nil)
-            self.item.handler!()
+            self.item?.handler!()
         }
         
         
